@@ -5,9 +5,9 @@ using System.Reflection;
 
 using RobustWindowsService.Domain;
 using RobustWindowsService.Application;
-using RobustWindowsService.Application.Worker;
 using RobustWindowsService.Infrastructure.Persistence;
 using RobustWindowsService.Presentation;
+using RobustWindowsService.Infrastructure.Logging;
 
 namespace RobustWindowsService
 {
@@ -18,6 +18,8 @@ namespace RobustWindowsService
             var services = new ServiceCollection();
 
             services.AddLogging(configure => { configure.AddConsole(); });
+
+            services.AddSingleton<ILoggingService, TxtLoggingService>();
             services.AddScoped<IConvenioRepository, ConvenioRepositoryTxt>();
 
             services.AddSingleton<IWorker, ParallelProcessorWorker>();

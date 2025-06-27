@@ -122,6 +122,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Application\Abstractions\Logging\ILoggingService.cs" />
     <Compile Include="Application\Abstractions\Messaging\ICommand.cs" />
     <Compile Include="Application\Abstractions\Messaging\ICommandHandler.cs" />
     <Compile Include="Application\Abstractions\Messaging\IEventDispatcher.cs" />
@@ -150,6 +151,7 @@
     <Compile Include="Domain\Convenios\Events\ConvenioCreadoEvent.cs" />
     <Compile Include="Domain\Convenios\Events\ConvenioSuspendidoEvent.cs" />
     <Compile Include="Domain\Convenios\IConvenioRepository.cs" />
+    <Compile Include="Infrastructure\Logging\TxtLoggingService.cs" />
     <Compile Include="Infrastructure\Persistence\Convenios\ConvenioRepositoryTxt.cs" />
     <Compile Include="MainService.cs">
       <SubType>Component</SubType>

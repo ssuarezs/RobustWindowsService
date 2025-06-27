@@ -9,11 +9,11 @@ namespace RobustWindowsService.Application
         where TCommand : ICommand
     {
         private readonly ICommandHandler<TCommand> _innerHandler;
-        private readonly ILogger<LoggingCommandHandlerDecorator<TCommand>> _logger;
+        private readonly ILoggingService _logger;
 
         public LoggingCommandHandlerDecorator(
             ICommandHandler<TCommand> innerHandler,
-            ILogger<LoggingCommandHandlerDecorator<TCommand>> logger)
+            ILoggingService logger)
         {
             _innerHandler = innerHandler;
             _logger = logger;
@@ -24,7 +24,7 @@ namespace RobustWindowsService.Application
             var commandName = typeof(TCommand).Name;
 
             // Lógica ANTES de la ejecución del handler real
-            _logger.LogInformation("--- [INICIO] Ejecutando: {CommandName} ---", commandName);
+            _logger.LogInfo($"--- [FIN] Ejecución de: {commandName} ---");
 
             try
             {
@@ -34,7 +34,7 @@ namespace RobustWindowsService.Application
             finally
             {
                 // Lógica DESPUÉS de la ejecución
-                _logger.LogInformation("--- [FIN] Ejecución de: {CommandName} ---", commandName);
+                _logger.LogInfo($"--- [FIN] Ejecución de: {commandName} ---");
             }
         }
     }
