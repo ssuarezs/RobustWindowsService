@@ -28,9 +28,9 @@ namespace RobustWindowsService
         {
             _mediator.SendCommandAsync(new StartProcessingCommand(), _cts.Token).GetAwaiter().GetResult();
 
-            var command = new CrearConvenioCommand { Cupo = 7500, FechaVigencia = DateTime.Now.AddMonths(6) };
-            var nuevoConvenioId = _mediator.SendCommandAsync<CrearConvenioCommand, Guid>(command).GetAwaiter().GetResult();
-            Console.WriteLine($"[PRUEBA] Se ha creado un nuevo convenio con ID: {nuevoConvenioId}");
+            var command = new CreateMyAggregateCommand { Cupo = 7500, FechaVigencia = DateTime.Now.AddMonths(6) };
+            var nuevoConvenioId = _mediator.SendCommandAsync<CreateMyAggregateCommand, Guid>(command).GetAwaiter().GetResult();
+            Console.WriteLine($"[PRUEBA] Se ha creado un nuevo agg con ID: {nuevoConvenioId}");
         }
 
         protected override void OnStop()

@@ -3,11 +3,11 @@ using System;
 
 namespace RobustWindowsService.Domain
 {
-    public class ConvenioCreadoEvent : IDomainEvent
+    public class MyAggregateCreatedEvent : IDomainEvent
     {
         public Guid ConvenioId { get; }
         public decimal CupoInicial { get; }
-        public ConvenioCreadoEvent(Guid convenioId, decimal cupoInicial)
+        public MyAggregateCreatedEvent(Guid convenioId, decimal cupoInicial)
         {
             ConvenioId = convenioId;
             CupoInicial = cupoInicial;

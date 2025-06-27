@@ -5,17 +5,17 @@ using RobustWindowsService.Domain;
 
 namespace RobustWindowsService.Infrastructure.Persistence
 {
-    public class ConvenioRepositoryTxt : IConvenioRepository
+    public class MyAggregateRepositoryTxt : IMyAggregateRepository
     {
-        private const string FilePath = "convenios.txt";
+        private const string FilePath = "aggregates_list.txt";
 
-        public Task AddAsync(Convenio convenio)
+        public Task AddAsync(MyAggregate agg)
         {
-            string data = $"ID: {convenio.Id}, Cupo: {convenio.Cupo}, Estado: {convenio.Estado}";
+            string data = $"ID: {agg.Id}, Aggregate: {agg.Cupo}, Estado: {agg.Estado}";
             return Task.Run(() => File.AppendAllText(FilePath, data + Environment.NewLine));
         }
 
-        public Task<Convenio> GetByIdAsync(Guid id)
+        public Task<MyAggregate> GetByIdAsync(Guid id)
         {
             // Implementación de lectura omitida por simplicidad  
             throw new NotImplementedException();

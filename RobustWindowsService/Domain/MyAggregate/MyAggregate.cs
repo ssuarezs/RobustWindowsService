@@ -3,19 +3,19 @@ using System;
 
 namespace RobustWindowsService.Domain
 {
-    public class Convenio : Entity
+    public class MyAggregate : Entity
     {
         public decimal Cupo { get; private set; }
         public DateTime FechaVigencia { get; private set; }
         public ConvenioEstado Estado { get; private set; }
 
-        private Convenio() { } // Constructor privado para forzar el uso del método de fábrica
+        private MyAggregate() { } // Constructor privado para forzar el uso del método de fábrica
 
-        public static Convenio Crear(decimal cupo, DateTime fechaVigencia)
+        public static MyAggregate Crear(decimal cupo, DateTime fechaVigencia)
         {
             if (cupo <= 0) throw new ArgumentException("El cupo inicial no puede ser cero o negativo.", nameof(cupo));
 
-            var convenio = new Convenio
+            var convenio = new MyAggregate
             {
                 Id = Guid.NewGuid(),
                 Cupo = cupo,
@@ -23,7 +23,7 @@ namespace RobustWindowsService.Domain
                 Estado = ConvenioEstado.Activo
             };
 
-            convenio.Raise(new ConvenioCreadoEvent(convenio.Id, convenio.Cupo));
+            convenio.Raise(new MyAggregateCreatedEvent(convenio.Id, convenio.Cupo));
             return convenio;
         }
 
@@ -33,7 +33,7 @@ namespace RobustWindowsService.Domain
             if (Estado == ConvenioEstado.Suspendido) return; // Ya está suspendido, no hacer nada.
 
             Estado = ConvenioEstado.Suspendido;
-            Raise(new ConvenioSuspendidoEvent(this.Id));
+            Raise(new MyAggregateDeactivatedEvent(this.Id));
         }
     }
 

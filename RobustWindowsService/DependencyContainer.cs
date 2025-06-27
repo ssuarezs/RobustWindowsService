@@ -20,7 +20,7 @@ namespace RobustWindowsService
             services.AddLogging(configure => { configure.AddConsole(); });
 
             services.AddSingleton<ILoggingService, TxtLoggingService>();
-            services.AddScoped<IConvenioRepository, ConvenioRepositoryTxt>();
+            services.AddScoped<IMyAggregateRepository, MyAggregateRepositoryTxt>();
 
             services.AddSingleton<IWorker, ParallelProcessorWorker>();
 

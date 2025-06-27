@@ -3,11 +3,11 @@ using System;
 
 namespace RobustWindowsService.Domain
 {
-    public class ConvenioSuspendidoEvent : IDomainEvent
+    public class MyAggregateDeactivatedEvent : IDomainEvent
     {
         public Guid ConvenioId { get; }
 
-        public ConvenioSuspendidoEvent(Guid convenioId)
+        public MyAggregateDeactivatedEvent(Guid convenioId)
         {
             ConvenioId = convenioId;
         }

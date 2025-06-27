@@ -132,8 +132,8 @@
     <Compile Include="Application\Abstractions\Worker\IWorker.cs" />
     <Compile Include="Application\Behaviors\LoggingCommandHandlerDecorator.cs" />
     <Compile Include="Application\Messaging\EventDispatcher.cs" />
-    <Compile Include="Application\Convenios\CrearConvenio\CrearConvenioCommand.cs" />
-    <Compile Include="Application\Convenios\CrearConvenio\CrearConvenioCommandHandler.cs" />
+    <Compile Include="Application\MyAggregate\Create\CreateMyAggregateCommand.cs" />
+    <Compile Include="Application\MyAggregate\Create\CreateMyAggregateCommandHandler.cs" />
     <Compile Include="Application\Messaging\Mediator.cs" />
     <Compile Include="Application\Worker\CycleCompleted\Handlers\LogCicloHandler.cs" />
     <Compile Include="Application\Worker\CycleCompleted\Handlers\WorkerCicloCompletadoEvent.cs" />
@@ -147,12 +147,12 @@
     <Compile Include="Domain\Abstractions\IDomainEvent.cs" />
     <Compile Include="Domain\Abstractions\IDomainEventHandler.cs" />
     <Compile Include="Domain\Common\Entity.cs" />
-    <Compile Include="Domain\Convenios\Convenio.cs" />
-    <Compile Include="Domain\Convenios\Events\ConvenioCreadoEvent.cs" />
-    <Compile Include="Domain\Convenios\Events\ConvenioSuspendidoEvent.cs" />
-    <Compile Include="Domain\Convenios\IConvenioRepository.cs" />
+    <Compile Include="Domain\MyAggregate\MyAggregate.cs" />
+    <Compile Include="Domain\MyAggregate\Events\MyAggregateCreatedEvent.cs" />
+    <Compile Include="Domain\MyAggregate\Events\MyAggregateDeactivatedEvent.cs" />
+    <Compile Include="Domain\MyAggregate\IMyAggregateRepository.cs" />
     <Compile Include="Infrastructure\Logging\TxtLoggingService.cs" />
-    <Compile Include="Infrastructure\Persistence\Convenios\ConvenioRepositoryTxt.cs" />
+    <Compile Include="Infrastructure\Persistence\MyAggregate\MyAggregateRepositoryTxt.cs" />
     <Compile Include="MainService.cs">
       <SubType>Component</SubType>
     </Compile>
