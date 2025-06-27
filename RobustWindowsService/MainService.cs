@@ -5,7 +5,8 @@ using System.Threading;
 using System.Threading.Tasks;
 
 using RobustWindowsService.Application;
-using RobustWindowsService.Application.Abstractions;
+using RobustWindowsService.Application.Convenios;
+using RobustWindowsService.Application.Worker;
 
 namespace RobustWindowsService
 {
@@ -26,6 +27,10 @@ namespace RobustWindowsService
         protected override void OnStart(string[] args)
         {
             _mediator.SendCommandAsync(new StartProcessingCommand(), _cts.Token).GetAwaiter().GetResult();
+
+            var command = new CrearConvenioCommand { Cupo = 7500, FechaVigencia = DateTime.Now.AddMonths(6) };
+            var nuevoConvenioId = _mediator.SendCommandAsync<CrearConvenioCommand, Guid>(command).GetAwaiter().GetResult();
+            Console.WriteLine($"[PRUEBA] Se ha creado un nuevo convenio con ID: {nuevoConvenioId}");
         }
 
         protected override void OnStop()

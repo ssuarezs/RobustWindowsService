@@ -1,6 +1,7 @@
-﻿using RobustWindowsService.Domain;
+﻿
 using System.Threading.Tasks;
 using System.Threading;
+using RobustWindowsService.Domain;
 
 namespace RobustWindowsService.Application
 {

@@ -1,9 +1,9 @@
 ﻿
 using Microsoft.Extensions.DependencyInjection;
-using RobustWindowsService.Domain;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
+using RobustWindowsService.Domain;
 
 namespace RobustWindowsService.Application
 {
@@ -27,7 +27,6 @@ namespace RobustWindowsService.Application
                 {
                     if (handler is null) continue;
 
-                    // Usamos la reflexión para invocar el método Handle de forma genérica
                     await (Task)handler.GetType()
                                        .GetMethod(nameof(IDomainEventHandler<IDomainEvent>.Handle))
                                        ?.Invoke(handler, new object[] { domainEvent, cancellationToken });

@@ -122,27 +122,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application\Abstractions\Behaviors\LoggingCommandHandlerDecorator.cs" />
-    <Compile Include="Application\Abstractions\Event\IEventDispatcher.cs" />
-    <Compile Include="Application\Abstractions\Mediator\IMediator.cs" />
-    <Compile Include="Application\Abstractions\Mediator\Mediator.cs" />
     <Compile Include="Application\Abstractions\Messaging\ICommand.cs" />
     <Compile Include="Application\Abstractions\Messaging\ICommandHandler.cs" />
+    <Compile Include="Application\Abstractions\Messaging\IEventDispatcher.cs" />
+    <Compile Include="Application\Abstractions\Messaging\IMediator.cs" />
     <Compile Include="Application\Abstractions\Messaging\IQuery.cs" />
     <Compile Include="Application\Abstractions\Messaging\IQueryHandler.cs" />
     <Compile Include="Application\Abstractions\Worker\IWorker.cs" />
-    <Compile Include="Application\Abstractions\Worker\WorkerConfigDto.cs" />
-    <Compile Include="Application\Common\EventDispatcher.cs" />
-    <Compile Include="Application\Worker\Events\WorkerCicloCompletadoEvent.cs" />
+    <Compile Include="Application\Behaviors\LoggingCommandHandlerDecorator.cs" />
+    <Compile Include="Application\Messaging\EventDispatcher.cs" />
+    <Compile Include="Application\Convenios\CrearConvenio\CrearConvenioCommand.cs" />
+    <Compile Include="Application\Convenios\CrearConvenio\CrearConvenioCommandHandler.cs" />
+    <Compile Include="Application\Messaging\Mediator.cs" />
+    <Compile Include="Application\Worker\CycleCompleted\Handlers\LogCicloHandler.cs" />
+    <Compile Include="Application\Worker\CycleCompleted\Handlers\WorkerCicloCompletadoEvent.cs" />
     <Compile Include="Application\Worker\GetWorkerConfig\GetWorkerConfigQuery.cs" />
     <Compile Include="Application\Worker\GetWorkerConfig\GetWorkerConfigQueryHandler.cs" />
-    <Compile Include="Application\Worker\LogCiclo\ContadorDeCiclosHandler.cs" />
-    <Compile Include="Application\Worker\LogCiclo\LogCicloHandler.cs" />
+    <Compile Include="Application\Worker\CycleCompleted\ContadorDeCiclosHandler.cs" />
+    <Compile Include="Application\Worker\GetWorkerConfig\WorkerConfigDto.cs" />
     <Compile Include="Application\Worker\StartProcessing\StartProcessingCommand.cs" />
     <Compile Include="Application\Worker\StartProcessing\StartProcessingCommandHandler.cs" />
     <Compile Include="DependencyContainer.cs" />
-    <Compile Include="Domain\Abstractions\Event\IDomainEvent.cs" />
-    <Compile Include="Domain\Abstractions\Event\IDomainEventHandler.cs" />
+    <Compile Include="Domain\Abstractions\IDomainEvent.cs" />
+    <Compile Include="Domain\Abstractions\IDomainEventHandler.cs" />
+    <Compile Include="Domain\Common\Entity.cs" />
+    <Compile Include="Domain\Convenios\Convenio.cs" />
+    <Compile Include="Domain\Convenios\Events\ConvenioCreadoEvent.cs" />
+    <Compile Include="Domain\Convenios\Events\ConvenioSuspendidoEvent.cs" />
+    <Compile Include="Domain\Convenios\IConvenioRepository.cs" />
+    <Compile Include="Infrastructure\Persistence\Convenios\ConvenioRepositoryTxt.cs" />
     <Compile Include="MainService.cs">
       <SubType>Component</SubType>
     </Compile>

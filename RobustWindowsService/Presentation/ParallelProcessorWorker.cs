@@ -1,9 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
-using RobustWindowsService.Application;
-using RobustWindowsService.Application.Worker.Events;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using RobustWindowsService.Application;
+using RobustWindowsService.Application.Worker;
 
 namespace RobustWindowsService.Presentation
 {

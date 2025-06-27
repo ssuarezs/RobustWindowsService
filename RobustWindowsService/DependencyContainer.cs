@@ -3,11 +3,11 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.Reflection;
 
-using RobustWindowsService.Application;
-using RobustWindowsService.Presentation;
-using RobustWindowsService.Application.Abstractions.Mediator;
-using RobustWindowsService.Application.Abstractions;
 using RobustWindowsService.Domain;
+using RobustWindowsService.Application;
+using RobustWindowsService.Application.Worker;
+using RobustWindowsService.Infrastructure.Persistence;
+using RobustWindowsService.Presentation;
 
 namespace RobustWindowsService
 {
@@ -18,6 +18,7 @@ namespace RobustWindowsService
             var services = new ServiceCollection();
 
             services.AddLogging(configure => { configure.AddConsole(); });
+            services.AddScoped<IConvenioRepository, ConvenioRepositoryTxt>();
 
             services.AddSingleton<IWorker, ParallelProcessorWorker>();
 

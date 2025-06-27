@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace RobustWindowsService.Application
+namespace RobustWindowsService.Application.Worker
 {
     public class StartProcessingCommandHandler : ICommandHandler<StartProcessingCommand>
     {

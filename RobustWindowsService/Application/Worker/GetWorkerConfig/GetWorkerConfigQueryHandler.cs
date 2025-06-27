@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using System.Threading;
 
-namespace RobustWindowsService.Application
+namespace RobustWindowsService.Application.Worker
 {
     public class GetWorkerConfigQueryHandler : IQueryHandler<GetWorkerConfigQuery, WorkerConfigDto>
     {

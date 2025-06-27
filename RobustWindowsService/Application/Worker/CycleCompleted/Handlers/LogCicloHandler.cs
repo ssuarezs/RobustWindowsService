@@ -1,11 +1,10 @@
 ﻿
-using RobustWindowsService.Application.Worker.Events;
-using RobustWindowsService.Domain;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
+using RobustWindowsService.Domain;
 
-namespace RobustWindowsService.Application.Worker.LogCiclo
+namespace RobustWindowsService.Application.Worker
 {
     public class LogCicloHandler : IDomainEventHandler<WorkerCicloCompletadoEvent>
     {

@@ -1,6 +1,7 @@
-﻿using RobustWindowsService.Domain;
+﻿
+using RobustWindowsService.Domain;
 
-namespace RobustWindowsService.Application.Worker.Events
+namespace RobustWindowsService.Application.Worker
 {
     public class WorkerCicloCompletadoEvent : IDomainEvent
     {

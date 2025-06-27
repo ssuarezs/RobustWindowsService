@@ -1,5 +1,5 @@
-﻿    
-namespace RobustWindowsService.Application
+﻿
+namespace RobustWindowsService.Application.Worker
 {   
     public class GetWorkerConfigQuery : IQuery<WorkerConfigDto>
     {

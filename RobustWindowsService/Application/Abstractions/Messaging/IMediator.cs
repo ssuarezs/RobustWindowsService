@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using System.Threading;
 
-namespace RobustWindowsService.Application.Abstractions
+namespace RobustWindowsService.Application
 {
     public interface IMediator
     {
